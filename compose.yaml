@@ -3,6 +3,7 @@ services:
   app:
     build: ./backend
     container_name: fastapi_test_app
+    env_file: .env
     ports:
       - 8000:8000
     depends_on:

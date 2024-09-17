@@ -7,7 +7,7 @@ click==8.1.7
 dnspython==2.6.1
 email_validator==2.2.0
 exceptiongroup==1.2.2
-fastapi==0.114.1
+fastapi==0.115.0
 fastapi-cli==0.0.5
 h11==0.14.0
 h2==4.1.0
@@ -24,6 +24,7 @@ pip==24.2
 pydantic==2.9.1
 pydantic_core==2.23.3
 Pygments==2.18.0
+python-dotenv==1.0.1
 python-multipart==0.0.9
 rich==13.8.1
 setuptools==73.0.1
