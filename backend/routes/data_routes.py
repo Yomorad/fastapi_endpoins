@@ -1,11 +1,11 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 from models.data import Data
-from redis_client import redis
+from redis_client import get_redis, redis
 
 router = APIRouter()
 
 @router.post("/write_data")
-async def write_data(data: Data):
+async def write_data(data: Data, redis = Depends(get_redis)):
     """
     Записывает данные в Redis по ключу phone.
 
@@ -34,7 +34,7 @@ async def write_data(data: Data):
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.post("/update_data")
-async def update_data(data: Data):
+async def update_data(data: Data, redis = Depends(get_redis)):
     """
     Обновление данных пользователя.
 
@@ -60,7 +60,7 @@ async def update_data(data: Data):
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/check_data")
-async def check_data(phone: str):
+async def check_data(phone: str, redis = Depends(get_redis)):
     """
     Получает данные из Redis по ключу phone.
 
