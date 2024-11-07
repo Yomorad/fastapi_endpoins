@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from models.data import Data
-from redis_client import get_redis, redis
+from redis_client import get_redis
 
 router = APIRouter()
 
